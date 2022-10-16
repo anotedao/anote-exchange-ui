@@ -63,3 +63,13 @@ $("#buttonCopy1").on( "click", function() {
         }, 500);
     });
 });
+
+$("#buttonCopy2").on( "click", function() {
+    var address = $("#sendAddress").val();
+    copy(String(address));
+    $("#messageCopy").fadeIn(function(){
+        setTimeout(function(){
+            $("#messageCopy").fadeOut();
+        }, 500);
+    });
+});
