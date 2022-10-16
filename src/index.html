@@ -78,12 +78,12 @@
                                  Waves
                               </button>
                               <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
-                                 <li><a class="dropdown-item" href="javascript: void null;">Waves</a></li>
+                                 <li><a class="dropdown-item" href="javascript:void(0);">Waves</a></li>
                               </ul>
                            </div>
                         </div>
                         <div class="col-2 text-center">
-                           <a href="javascript: void null;" style="display: block; margin-top: 35px;" class="text-danger">
+                           <a href="javascript:void(0);" style="display: block; margin-top: 35px;" class="text-danger">
                               <i class="bi bi-arrow-left-right" style="font-size: 2em;"></i>
                            </a>
                         </div>
@@ -95,7 +95,7 @@
                                     Anote
                                  </button>
                                  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
-                                    <li><a class="dropdown-item" href="javascript: void null;">Anote</a></li>
+                                    <li><a class="dropdown-item" href="javascript:void(0);">Anote</a></li>
                                  </ul>
                               </div>
                            </div>
@@ -134,8 +134,8 @@
                                  Delayed
                               </button>
                               <ul class="dropdown-menu" aria-labelledby="dropdownMenuTradeType">
-                                 <li><a class="dropdown-item" href="javascript: void null;">Delayed</a></li>
-                                 <li><a class="dropdown-item" href="javascript: void null;">Instant</a></li>
+                                 <li><a class="dropdown-item" href="javascript:void(0);">Delayed</a></li>
+                                 <li><a class="dropdown-item" href="javascript:void(0);">Instant</a></li>
                               </ul>
                            </div>
                         </div>
@@ -166,10 +166,10 @@
                         </div>
                      </div>
                      <div class="row" id="step3" style="display: none;">
-                        <div class="mb-4">
+                        <div class="mb-3">
                            <label for="sendAmount" class="form-label fw-bold">Send Amount</label>
                            <div class="input-group mb-3 input-group-sm">
-                              <input type="text" class="form-control" readonly value="" id="sendAmount">
+                              <input type="text" class="form-control" readonly value="12.12321" id="sendAmount">
                               <div class="input-group-append">
                                  <button class="btn btn-primary" type="button" id="buttonCopy1">
                                     <i class="bi bi-files"></i>
@@ -180,7 +180,7 @@
                         <div>
                            <label for="sendAddress" class="form-label fw-bold">Send To Address</label>
                            <div class="input-group mb-3 input-group-sm">
-                              <input type="text" class="form-control" readonly value="" id="sendAddress">
+                              <input type="text" class="form-control" readonly value="fdsfsdafsdaaaaaa" id="sendAddress">
                               <div class="input-group-append">
                                  <button class="btn btn-primary" type="button" id="buttonCopy2">
                                     <i class="bi bi-files"></i>
@@ -188,6 +188,7 @@
                               </div>
                            </div>
                         </div>
+                        <div id="messageCopy" class="form-text text-success mt-1 mb-2" style="display: none;" data-t>Copied to clipboard.</div>
                      </div>
                   </div>
                   <div class="col-0 col-lg-3"></div>

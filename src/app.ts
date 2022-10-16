@@ -1,5 +1,6 @@
 import $ from "jquery";
 import "regenerator-runtime/runtime.js";
+import copy from 'copy-to-clipboard';
 
 class Exchange { 
 
@@ -50,5 +51,15 @@ $("#buttonExchange2").on( "click", function() {
 $("#buttonBack").on( "click", function() {
     $("#step2").fadeOut(function() {
         $("#step1").fadeIn();
+    });
+});
+
+$("#buttonCopy1").on( "click", function() {
+    var amount = $("#sendAmount").val();
+    copy(String(amount));
+    $("#messageCopy").fadeIn(function(){
+        setTimeout(function(){
+            $("#messageCopy").fadeOut();
+        }, 500);
     });
 });
