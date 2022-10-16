@@ -104,13 +104,14 @@
                            <label for="amountSend" class="form-label fw-bold">You Send</label>
                            <input type="text" class="form-control form-control-lg" id="amountSend">
                         </div>
+                        <div id="messageError1" class="form-text text-danger mb-2" data-t style="margin-top: -2px; display: none;">This field is required.</div>
                         <div class="mb-3">
-                           <label for="amountDelayed" class="form-label fw-bold">Delayed Trade - You Receive</label>
-                           <input type="text" class="form-control form-control-lg" id="amountDelayed" disabled readonly>
-                        </div>
-                        <div class="mb-4">
                            <label for="amountInstant" class="form-label fw-bold">Instant Trade - You Receive</label>
                            <input type="text" class="form-control form-control-lg" id="amountInstant" disabled readonly>
+                        </div>
+                        <div class="mb-4">
+                           <label for="amountDelayed" class="form-label fw-bold">Delayed Trade - You Receive</label>
+                           <input type="text" class="form-control form-control-lg" id="amountDelayed" disabled readonly>
                         </div>
                         <div class="row" style="padding-right: 0;">
                            <div class="col-5 d-grid">
@@ -131,26 +132,27 @@
                            <label class="form-label fw-bold" data-t>Trade Type</label>
                            <div class="dropdown d-grid">
                               <button class="btn btn-block btn-primary btn-lg dropdown-toggle" type="button" id="dropdownMenuTradeType" data-bs-toggle="dropdown" aria-expanded="false" style="text-align: left; font-size: 1rem; padding: 0.75rem 1rem;">
-                                 Delayed
+                                 Instant
                               </button>
                               <ul class="dropdown-menu" aria-labelledby="dropdownMenuTradeType">
-                                 <li><a class="dropdown-item" href="javascript:void(0);">Delayed</a></li>
                                  <li><a class="dropdown-item" href="javascript:void(0);">Instant</a></li>
+                                 <li><a class="dropdown-item" href="javascript:void(0);">Delayed</a></li>
                               </ul>
                            </div>
                         </div>
-                        <div class="mb-4">
+                        <div class="mb-3">
                            <label for="amountInstant" class="form-label fw-bold">You Send</label>
-                           <input type="text" class="form-control form-control-lg" id="amountSend" disabled readonly>
+                           <input type="text" class="form-control form-control-lg" id="amountSend1" disabled readonly>
                         </div>
-                        <div class="mb-4">
+                        <div class="mb-3">
                            <label for="amountInstant" class="form-label fw-bold">You Receive</label>
-                           <input type="text" class="form-control form-control-lg" id="amountSend" disabled readonly>
+                           <input type="text" class="form-control form-control-lg" id="amountReceive1" disabled readonly>
                         </div>
                         <div class="mb-4">
                            <label for="amountInstant" class="form-label fw-bold">Receiving Address</label>
                            <input type="text" class="form-control form-control-lg" id="address">
                         </div>
+                        <div id="messageError2" class="form-text text-danger mb-3" data-t style="margin-top: -8px; display: none;">This field is required.</div>
                         <div class="row" style="padding-right: 0;">
                            <div class="col-5 d-grid">
                               <button type="button" class="btn btn-secondary btn-lg btn-block" id="buttonBack">
@@ -166,10 +168,10 @@
                         </div>
                      </div>
                      <div class="row" id="step3" style="display: none;">
-                        <div class="mb-2">
+                        <div class="mb-1">
                            <label for="sendAmount" class="form-label fw-bold">Send Amount</label>
                            <div class="input-group mb-3 input-group-lg">
-                              <input type="text" class="form-control" readonly value="" id="sendAmount">
+                              <input type="text" class="form-control" readonly value="12.12321" id="sendAmount">
                               <div class="input-group-append">
                                  <button class="btn btn-primary btn-lg" type="button" id="buttonCopy1">
                                     <i class="bi bi-files"></i>
@@ -180,7 +182,7 @@
                         <div>
                            <label for="sendAddress" class="form-label fw-bold">Send To Address</label>
                            <div class="input-group mb-3 input-group-lg">
-                              <input type="text" class="form-control" readonly value="" id="sendAddress">
+                              <input type="text" class="form-control" readonly value="fdsfsdafsdaaaaaa" id="sendAddress">
                               <div class="input-group-append">
                                  <button class="btn btn-primary btn-lg" type="button" id="buttonCopy2">
                                     <i class="bi bi-files"></i>

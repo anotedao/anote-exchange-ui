@@ -1,3 +1,4 @@
+// import "bootswatch/dist/darkly/bootstrap.min.css";
 import $ from "jquery";
 import "regenerator-runtime/runtime.js";
 import copy from 'copy-to-clipboard';
@@ -37,15 +38,33 @@ document.addEventListener('DOMContentLoaded', (event) => {
 })
 
 $("#buttonExchange").on( "click", function() {
-    $("#step1").fadeOut(function() {
-        $("#step2").fadeIn();
-    });
+    var amount = $("#amountSend").val();
+    if (amount?.toString().length == 0) {
+        $("#messageError1").fadeIn(function(){
+            setTimeout(function(){
+                $("#messageError1").fadeOut();
+            }, 500);
+        });
+    } else {
+        $("#step1").fadeOut(function() {
+            $("#step2").fadeIn();
+        });
+    }
 });
 
 $("#buttonExchange2").on( "click", function() {
-    $("#step2").fadeOut(function() {
-        $("#step3").fadeIn();
-    });
+    var address = $("#address").val();
+    if (address?.toString().length == 0) {
+        $("#messageError2").fadeIn(function(){
+            setTimeout(function(){
+                $("#messageError2").fadeOut();
+            }, 500);
+        });
+    } else {
+        $("#step2").fadeOut(function() {
+            $("#step3").fadeIn();
+        });
+    }
 });
 
 $("#buttonBack").on( "click", function() {
