@@ -70,10 +70,10 @@
                   <div class="col-0 col-lg-3"></div>
                   <div class="col-12 col-lg-6">
                      <h5 class="py-2 text-start text-secondary border-bottom mb-3"><strong data-t>home.exchangeTitle</strong></h5>
-                     <div class="row" id="step1">
+                     <div class="row mb-3" id="step1">
                         <div class="col-5">
                            <label class="form-label fw-bold" data-t>From</label>
-                           <div class="dropdown d-grid">
+                           <div class="dropdown d-grid" id="from">
                               <button class="btn btn-block btn-primary btn-lg dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false" style="text-align: left; font-size: 1rem; padding: 0.75rem 1rem;">
                                  Waves
                               </button>
@@ -83,23 +83,23 @@
                            </div>
                         </div>
                         <div class="col-2 text-center">
-                           <a href="javascript:void(0);" style="display: block; margin-top: 35px;" class="text-danger">
+                           <a href="javascript:void(0);" style="display: block; margin-top: 35px;" class="text-danger" id="buttonToggle">
                               <i class="bi bi-arrow-left-right" style="font-size: 2em;"></i>
                            </a>
                         </div>
                         <div class="col-5">
-                           <div class="mb-3" id="dropdown2">
-                              <label class="form-label fw-bold" data-t>To</label>
-                              <div class="dropdown d-grid">
-                                 <button class="btn btn-block btn-primary btn-lg dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false" style="text-align: left; font-size: 1rem; padding: 0.75rem 1rem;">
-                                    Anote
-                                 </button>
-                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
-                                    <li><a class="dropdown-item" href="javascript:void(0);">Anote</a></li>
-                                 </ul>
-                              </div>
+                           <label class="form-label fw-bold" data-t>To</label>
+                           <div class="dropdown d-grid" id="to">
+                              <button class="btn btn-block btn-primary btn-lg dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false" style="text-align: left; font-size: 1rem; padding: 0.75rem 1rem;">
+                                 Anote
+                              </button>
+                              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                                 <li><a class="dropdown-item" href="javascript:void(0);">Anote</a></li>
+                              </ul>
                            </div>
                         </div>
+                     </div>
+                     <div class="row">
                         <div class="mb-3">
                            <label for="amountSend" class="form-label fw-bold">You Send</label>
                            <input type="text" class="form-control form-control-lg" id="amountSend">

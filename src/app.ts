@@ -92,3 +92,10 @@ $("#buttonCopy2").on( "click", function() {
         }, 500);
     });
 });
+
+$("#buttonToggle").on( "click", function() {
+    var from = $("#from").html();
+    var to = $("#to").html();
+    $("#from").html(to);
+    $("#to").html(from);
+});
