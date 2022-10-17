@@ -48,6 +48,16 @@ $("#buttonExchange").on( "click", function() {
             }, 500);
         });
     } else {
+        if (amount != undefined) {
+            $("#amountSend1").val(amount);
+        }
+        $("#step2Loading").fadeIn();
+        $.getJSON("https://exchange.anote.digital/calculate/" + fromC + "/" + toC + "/" + amount, function(data) {
+            $("#amountInstant").val(data.result_instant);
+            $("#amountDelayed").val(data.result_delay);
+            $("#amountReceive1").val(data.result_instant);
+            $("#step2Loading").fadeOut();
+        });
         $("#step1").fadeOut(function() {
             $("#step2").fadeIn();
         });
@@ -107,6 +117,10 @@ $("#buttonToggle").on( "click", function() {
     $("#ticker1").html(capitalizeFirstLetter(fromC));
     $("#ticker2").html(capitalizeFirstLetter(toC));
     $("#ticker3").html(capitalizeFirstLetter(toC));
+
+    $("#ticker4").html(capitalizeFirstLetter(fromC));
+    $("#ticker5").html(capitalizeFirstLetter(toC));
+    $("#ticker6").html(capitalizeFirstLetter(toC));
 });
 
 $("#buttonCalc").on( "click", function() {
@@ -118,13 +132,37 @@ $("#buttonCalc").on( "click", function() {
             }, 500);
         });
     } else {
+        if (amount != undefined) {
+            $("#amountSend1").val(amount);
+        }
         $("#calcLoading").fadeIn();
         $.getJSON("https://exchange.anote.digital/calculate/" + fromC + "/" + toC + "/" + amount, function(data) {
             $("#amountInstant").val(data.result_instant);
             $("#amountDelayed").val(data.result_delay);
+            $("#amountReceive1").val(data.result_instant);
             $("#calcLoading").fadeOut();
         });
     }
+});
+
+$("#buttonInstant").on( "click", function() {
+    $("#dropdownMenuTradeType").html("Instant");
+    $("#step2Loading").fadeIn();
+    var amount = $("#amountSend").val();
+    $.getJSON("https://exchange.anote.digital/calculate/" + fromC + "/" + toC + "/" + amount, function(data) {
+        $("#amountReceive1").val(data.result_instant);
+        $("#step2Loading").fadeOut();
+    });
+});
+
+$("#buttonDelayed").on( "click", function() {
+    $("#dropdownMenuTradeType").html("Delayed");
+    $("#step2Loading").fadeIn();
+    var amount = $("#amountSend").val();
+    $.getJSON("https://exchange.anote.digital/calculate/" + fromC + "/" + toC + "/" + amount, function(data) {
+        $("#amountReceive1").val(data.result_delay);
+        $("#step2Loading").fadeOut();
+    });
 });
 
 function capitalizeFirstLetter(string) {

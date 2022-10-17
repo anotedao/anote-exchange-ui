@@ -141,21 +141,21 @@
                                  Instant
                               </button>
                               <ul class="dropdown-menu" aria-labelledby="dropdownMenuTradeType">
-                                 <li><a class="dropdown-item" href="javascript:void(0);">Instant</a></li>
-                                 <li><a class="dropdown-item" href="javascript:void(0);">Delayed</a></li>
+                                 <li><a class="dropdown-item" href="javascript:void(0);" id="buttonInstant">Instant</a></li>
+                                 <li><a class="dropdown-item" href="javascript:void(0);" id="buttonDelayed">Delayed</a></li>
                               </ul>
                            </div>
                         </div>
                         <div class="mb-3">
-                           <label for="amountSend1" class="form-label fw-bold">You Send</label>
+                           <label for="amountSend1" class="form-label fw-bold">You Send (<span id="ticker4">Waves</span>)</label>
                            <input type="text" class="form-control form-control-lg" id="amountSend1" disabled readonly>
                         </div>
                         <div class="mb-3">
-                           <label for="amountReceive1" class="form-label fw-bold">You Receive</label>
+                           <label for="amountReceive1" class="form-label fw-bold">You Receive (<span id="ticker5">Anote</span>)</label>
                            <input type="text" class="form-control form-control-lg" id="amountReceive1" disabled readonly>
                         </div>
                         <div class="mb-4">
-                           <label for="address" class="form-label fw-bold">Receiving Address</label>
+                           <label for="address" class="form-label fw-bold">Your <span id="ticker6">Anote</span> Address</label>
                            <input type="text" class="form-control form-control-lg" id="address">
                         </div>
                         <div id="messageError2" class="form-text text-danger mb-3" data-t style="margin-top: -8px; display: none;">This field is required.</div>
@@ -165,7 +165,13 @@
                                  <i class="bi bi-arrow-left-square"></i>&nbsp;&nbsp;Go Back
                               </button>
                            </div>
-                           <div class="col-2"></div>
+                           <div class="col-2">
+                              <div class="d-flex justify-content-center">
+                                 <div class="spinner-border text-danger" role="status" style="margin-top: 8px; display: none;" id="step2Loading">
+                                   <span class="visually-hidden">Loading...</span>
+                                 </div>
+                               </div>
+                           </div>
                            <div class="col-5 d-grid" style="padding-right: 0;">
                               <button type="button" class="btn btn-success btn-lg btn-block" id="buttonExchange2">
                                  <i class="bi bi-currency-exchange"></i> Exchange
