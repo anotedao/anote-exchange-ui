@@ -70,56 +70,62 @@
                   <div class="col-0 col-lg-3"></div>
                   <div class="col-12 col-lg-6">
                      <h5 class="py-2 text-start text-secondary border-bottom mb-3"><strong data-t>home.exchangeTitle</strong></h5>
-                     <div class="row mb-3" id="step1">
-                        <div class="col-5">
-                           <label class="form-label fw-bold" data-t>From</label>
-                           <div class="dropdown d-grid" id="from">
-                              <button class="btn btn-block btn-primary btn-lg dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false" style="text-align: left; font-size: 1rem; padding: 0.75rem 1rem;">
-                                 Waves
-                              </button>
-                              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
-                                 <li><a class="dropdown-item" href="javascript:void(0);">Waves</a></li>
-                              </ul>
+                     <div class="row" id="step1">
+                        <div class="row mb-3">
+                           <div class="col-5">
+                              <label class="form-label fw-bold" data-t>From</label>
+                              <div class="dropdown d-grid" id="from">
+                                 <button class="btn btn-block btn-primary btn-lg dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false" style="text-align: left; font-size: 1rem; padding: 0.75rem 1rem;">
+                                    Waves
+                                 </button>
+                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                                    <li><a class="dropdown-item" href="javascript:void(0);">Waves</a></li>
+                                 </ul>
+                              </div>
                            </div>
-                        </div>
-                        <div class="col-2 text-center">
-                           <a href="javascript:void(0);" style="display: block; margin-top: 35px;" class="text-danger" id="buttonToggle">
-                              <i class="bi bi-arrow-left-right" style="font-size: 2em;"></i>
-                           </a>
-                        </div>
-                        <div class="col-5">
-                           <label class="form-label fw-bold" data-t>To</label>
-                           <div class="dropdown d-grid" id="to">
-                              <button class="btn btn-block btn-primary btn-lg dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false" style="text-align: left; font-size: 1rem; padding: 0.75rem 1rem;">
-                                 Anote
-                              </button>
-                              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
-                                 <li><a class="dropdown-item" href="javascript:void(0);">Anote</a></li>
-                              </ul>
+                           <div class="col-2 text-center">
+                              <a href="javascript:void(0);" style="display: block; margin-top: 35px;" class="text-danger" id="buttonToggle">
+                                 <i class="bi bi-arrow-left-right" style="font-size: 2em;"></i>
+                              </a>
                            </div>
+                           <div class="col-5">
+                              <label class="form-label fw-bold" data-t>To</label>
+                              <div class="dropdown d-grid" id="to">
+                                 <button class="btn btn-block btn-primary btn-lg dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false" style="text-align: left; font-size: 1rem; padding: 0.75rem 1rem;">
+                                    Anote
+                                 </button>
+                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                                    <li><a class="dropdown-item" href="javascript:void(0);">Anote</a></li>
+                                 </ul>
+                              </div>
+                           </div>   
                         </div>
-                     </div>
-                     <div class="row">
                         <div class="mb-3">
-                           <label for="amountSend" class="form-label fw-bold">You Send</label>
+                           <label for="amountSend" class="form-label fw-bold">You Send (<span id="ticker1">Waves</span>)</label>
                            <input type="text" class="form-control form-control-lg" id="amountSend">
                         </div>
                         <div id="messageError1" class="form-text text-danger mb-2" data-t style="margin-top: -2px; display: none;">This field is required.</div>
                         <div class="mb-3">
-                           <label for="amountInstant" class="form-label fw-bold">Instant Trade - You Receive</label>
+                           <label for="amountInstant" class="form-label fw-bold">Instant Trade - You Receive (<span id="ticker2">Anote</span>)</label>
                            <input type="text" class="form-control form-control-lg" id="amountInstant" disabled readonly>
                         </div>
                         <div class="mb-4">
-                           <label for="amountDelayed" class="form-label fw-bold">Delayed Trade - You Receive</label>
+                           <label for="amountDelayed" class="form-label fw-bold">Delayed Trade - You Receive (<span id="ticker3">Anote</span>)</label>
                            <input type="text" class="form-control form-control-lg" id="amountDelayed" disabled readonly>
                         </div>
                         <div class="row" style="padding-right: 0;">
                            <div class="col-5 d-grid">
-                              <button type="button" class="btn btn-secondary btn-lg btn-block">
+                              <button type="button" class="btn btn-secondary btn-lg btn-block" id="buttonCalc">
                                  <i class="bi bi-calculator-fill"></i> Calculate
                               </button>
                            </div>
-                           <div class="col-2"></div>
+                           <div class="col-2">
+                              <div class="d-flex justify-content-center">
+                                 <div class="spinner-border text-danger" role="status" style="margin-top: 8px; display: none;" id="calcLoading">
+                                   <span class="visually-hidden">Loading...</span>
+                                 </div>
+                               </div>
+                           </div>
                            <div class="col-5 d-grid" style="padding-right: 0;">
                               <button type="button" class="btn btn-success btn-lg btn-block" id="buttonExchange">
                                  <i class="bi bi-currency-exchange"></i> Proceed
@@ -141,15 +147,15 @@
                            </div>
                         </div>
                         <div class="mb-3">
-                           <label for="amountInstant" class="form-label fw-bold">You Send</label>
+                           <label for="amountSend1" class="form-label fw-bold">You Send</label>
                            <input type="text" class="form-control form-control-lg" id="amountSend1" disabled readonly>
                         </div>
                         <div class="mb-3">
-                           <label for="amountInstant" class="form-label fw-bold">You Receive</label>
+                           <label for="amountReceive1" class="form-label fw-bold">You Receive</label>
                            <input type="text" class="form-control form-control-lg" id="amountReceive1" disabled readonly>
                         </div>
                         <div class="mb-4">
-                           <label for="amountInstant" class="form-label fw-bold">Receiving Address</label>
+                           <label for="address" class="form-label fw-bold">Receiving Address</label>
                            <input type="text" class="form-control form-control-lg" id="address">
                         </div>
                         <div id="messageError2" class="form-text text-danger mb-3" data-t style="margin-top: -8px; display: none;">This field is required.</div>
