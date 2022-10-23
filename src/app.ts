@@ -82,6 +82,17 @@ $("#buttonExchange2").on( "click", function() {
             $("#step2Loading").fadeOut();
             $("#step2").fadeOut(function() {
                 $("#step3").fadeIn();
+                if (fromC == "anote") {
+                    $.getJSON("https://nodes.wavesplatform.com/addresses/balance/" + address, function(data){
+                        var address = $("#address").val();
+                        waitForBalance(fromC, address, data.balance);
+                    })
+                } else {
+                    $.getJSON("https://nodes.anote.digital/addresses/balance/" + address, function(data) {
+                        var address = $("#address").val();
+                        waitForBalance(fromC, address, data.balance);
+                    })
+                }
             });
         });
     }
@@ -177,4 +188,36 @@ $("#buttonDelayed").on( "click", function() {
 
 function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
+function waitForBalance(from: string, address: any, balance: number) {
+    if (from == "anote") {
+        $.getJSON("https://nodes.wavesplatform.com/addresses/balance/" + address, function(data){
+            if (balance == data.balance) {
+                setTimeout(function(){
+                    waitForBalance(from, address, data.balance);
+                }, 1000);
+            } else {
+                $("#messageWait").fadeOut(function() {
+                    $("#messageWait").html("Your trade is done!")
+                    $("#step3Loading").hide();
+                    $("#messageWait").fadeIn();
+                });
+            }
+        })
+    } else {
+        $.getJSON("https://nodes.anote.digital/addresses/balance/" + address, function(data) {
+            if (balance == data.balance) {
+                setTimeout(function(){
+                    waitForBalance(from, address, data.balance);
+                }, 1000);
+            } else {
+                $("#messageWait").fadeOut(function() {
+                    $("#messageWait").html("Your trade is done!")
+                    $("#step3Loading").hide();
+                    $("#messageWait").fadeIn();
+                });
+            }
+        })
+    }
 }

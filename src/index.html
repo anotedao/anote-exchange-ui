@@ -105,11 +105,11 @@
                            <input type="text" class="form-control form-control-lg" id="amountSend">
                         </div>
                         <div id="messageError1" class="form-text text-danger mb-2" data-t style="margin-top: -2px; display: none;">This field is required.</div>
-                        <div class="mb-3">
+                        <div class="mb-4">
                            <label for="amountInstant" class="form-label fw-bold">Instant Trade - You Receive (<span id="ticker2">Anote</span>)</label>
                            <input type="text" class="form-control form-control-lg" id="amountInstant" disabled readonly>
                         </div>
-                        <div class="mb-4">
+                        <div class="mb-4" style="display: none;">
                            <label for="amountDelayed" class="form-label fw-bold">Delayed Trade - You Receive (<span id="ticker3">Anote</span>)</label>
                            <input type="text" class="form-control form-control-lg" id="amountDelayed" disabled readonly>
                         </div>
@@ -121,7 +121,7 @@
                            </div>
                            <div class="col-2">
                               <div class="d-flex justify-content-center">
-                                 <div class="spinner-border text-danger" role="status" style="margin-top: 8px; display: none;" id="calcLoading">
+                                 <div class="spinner-border text-success" role="status" style="margin-top: 8px; display: none;" id="calcLoading">
                                    <span class="visually-hidden">Loading...</span>
                                  </div>
                                </div>
@@ -134,7 +134,7 @@
                         </div>
                      </div>
                      <div class="row" id="step2" style="display: none;">
-                        <div class="mb-3" id="dropdown3">
+                        <div class="mb-3" id="dropdown3" style="display: none;">
                            <label class="form-label fw-bold" data-t>Trade Type</label>
                            <div class="dropdown d-grid">
                               <button class="btn btn-block btn-primary btn-lg dropdown-toggle" type="button" id="dropdownMenuTradeType" data-bs-toggle="dropdown" aria-expanded="false" style="text-align: left; font-size: 1rem; padding: 0.75rem 1rem;">
@@ -167,7 +167,7 @@
                            </div>
                            <div class="col-2">
                               <div class="d-flex justify-content-center">
-                                 <div class="spinner-border text-danger" role="status" style="margin-top: 8px; display: none;" id="step2Loading">
+                                 <div class="spinner-border text-success" role="status" style="margin-top: 8px; display: none;" id="step2Loading">
                                    <span class="visually-hidden">Loading...</span>
                                  </div>
                                </div>
@@ -203,6 +203,16 @@
                            </div>
                         </div>
                         <div id="messageCopy" class="form-text text-success mt-1 mb-2" style="display: none;" data-t>Copied to clipboard.</div>
+                        <div class="d-flex justify-content-center">
+                           <div class="spinner-border text-success" role="status" style="margin-top: 8px;" id="step3Loading">
+                             <span class="visually-hidden">Loading...</span>
+                           </div>
+                        </div>
+                        <div class="row mt-3" style="padding-right: 0;">
+                           <div class="col-12" style="padding-right: 0;">
+                              <div id="messageWait" class="alert alert-success mb-0 px-2 text-center">Waiting for your payment...</div>
+                           </div>
+                        </div>
                      </div>
                   </div>
                   <div class="col-0 col-lg-3"></div>
